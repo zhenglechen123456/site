@@ -1,0 +1,130 @@
+/* ==========================================================================
+   tokens.css — 全站设计变量（颜色 / 字体 / 字号 / 间距 / 圆角 / 阴影 / 动效）
+   想改配色、字号、留白力度，只需要改这一个文件。
+   深浅两套主题：浅色为默认值，深色通过 [data-theme="dark"] 覆盖，
+   同时用 prefers-color-scheme 兜底（JS 不可用时也能跟随系统）。
+   ========================================================================== */
+
+:root {
+  color-scheme: light;
+
+  /* --- 字体栈：中文优先，零外链 --- */
+  --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans SC",
+    "PingFang SC", "Microsoft YaHei", "Helvetica Neue", Arial, sans-serif;
+  --font-mono: ui-monospace, "SF Mono", "SFMono-Regular", Menlo, Consolas,
+    "Liberation Mono", "Courier New", monospace;
+
+  /* --- 字号（正文 16px，标题用 clamp 做流式缩放） --- */
+  --fs-xs: 0.75rem;      /* 12px 标签、脚注 */
+  --fs-sm: 0.8125rem;    /* 13px 元信息、导航 */
+  --fs-base: 1rem;       /* 16px 正文 */
+  --fs-md: 1.0625rem;    /* 17px 卡片标题 */
+  --fs-lg: 1.3125rem;    /* 21px 分区标题 */
+  --fs-xl: 1.625rem;     /* 26px 页面标题 */
+  --fs-2xl: clamp(1.875rem, 1.5rem + 1.6vw, 2.5rem);
+  --fs-numeral: clamp(2.5rem, 1.9rem + 3vw, 4rem);       /* 分区大号编号 01 */
+
+  /* --- 行高与字距 --- */
+  --lh-tight: 1.25;
+  --lh-snug: 1.5;
+  --lh-base: 1.75;
+  --ls-wide: 0.12em;
+  --ls-mono: 0.04em;
+
+  /* --- 间距（8px 基准） --- */
+  --sp-1: 0.25rem;
+  --sp-2: 0.5rem;
+  --sp-3: 0.75rem;
+  --sp-4: 1rem;
+  --sp-5: 1.5rem;
+  --sp-6: 2rem;
+  --sp-7: 2.5rem;
+  --sp-8: 3rem;
+  --sp-9: 4rem;
+  --sp-10: 5rem;
+  --sp-11: 7rem;
+
+  /* --- 版心与行宽 --- */
+  --container: 71rem;        /* 1136px 内容最大宽度 */
+  --container-page: 60rem;   /* 列表 / 文章页 */
+  --measure: 68ch;           /* 段落最大宽度 */
+
+  /* --- 圆角 / 边框 --- */
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 14px;
+  --radius-pill: 999px;
+  --border-w: 1px;
+
+  /* --- 动效 --- */
+  --ease: cubic-bezier(0.22, 0.61, 0.36, 1);
+  --dur-fast: 120ms;
+  --dur: 200ms;
+  --dur-slow: 460ms;
+
+  /* --- 层级 --- */
+  --z-header: 50;
+  --z-to-top: 40;
+
+  /* --- 颜色：浅色主题（默认） --- */
+  --c-bg: #fafafa;
+  --c-bg-elevated: #ffffff;
+  --c-bg-subtle: #f1f1f3;
+  --c-text: #17191d;
+  --c-text-2: #4b4f57;
+  --c-text-3: #83878f;
+  --c-border: #e3e3e7;
+  --c-border-strong: #c9cbd1;
+  --c-accent: #34718c;             /* 唯一强调色：低饱和蓝青 */
+  --c-accent-hover: #26586e;
+  --c-accent-soft: rgba(52, 113, 140, 0.1);
+  --c-accent-glow: rgba(52, 113, 140, 0.03);      /* 头图极淡径向光晕 */
+  --c-bg-translucent: rgba(250, 250, 250, 0.82);  /* 顶栏滚动后的半透明底 */
+  --c-numeral: #dcdde1;            /* 分区大号数字的灰 */
+  --c-shadow: 0 1px 2px rgba(20, 22, 26, 0.05);
+  --c-shadow-lift: 0 8px 20px -14px rgba(20, 22, 26, 0.35);
+}
+
+/* --- 颜色：深色主题 --- */
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --c-bg: #0f1115;
+  --c-bg-elevated: #14171c;
+  --c-bg-subtle: #191d23;
+  --c-text: #e8e9ec;
+  --c-text-2: #a9adb5;
+  --c-text-3: #767b85;
+  --c-border: #24282f;
+  --c-border-strong: #383d46;
+  --c-accent: #7bb4ce;
+  --c-accent-hover: #9fcbe0;
+  --c-accent-soft: rgba(123, 180, 206, 0.14);
+  --c-accent-glow: rgba(123, 180, 206, 0.035);
+  --c-bg-translucent: rgba(15, 17, 21, 0.78);
+  --c-numeral: #262b33;
+  --c-shadow: 0 1px 2px rgba(0, 0, 0, 0.45);
+  --c-shadow-lift: 0 10px 26px -16px rgba(0, 0, 0, 0.9);
+}
+
+/* --- 没有 JS 时跟随系统（有 JS 时 html[data-theme] 会覆盖这里） --- */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    color-scheme: dark;
+    --c-bg: #0f1115;
+    --c-bg-elevated: #14171c;
+    --c-bg-subtle: #191d23;
+    --c-text: #e8e9ec;
+    --c-text-2: #a9adb5;
+    --c-text-3: #767b85;
+    --c-border: #24282f;
+    --c-border-strong: #383d46;
+    --c-accent: #7bb4ce;
+    --c-accent-hover: #9fcbe0;
+    --c-accent-soft: rgba(123, 180, 206, 0.14);
+    --c-accent-glow: rgba(123, 180, 206, 0.035);
+    --c-bg-translucent: rgba(15, 17, 21, 0.78);
+    --c-numeral: #262b33;
+    --c-shadow: 0 1px 2px rgba(0, 0, 0, 0.45);
+    --c-shadow-lift: 0 10px 26px -16px rgba(0, 0, 0, 0.9);
+  }
+}

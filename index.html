@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Judy’s Notes — 郑乐晨的学习笔记</title>
+  <!-- TODO: 替换为你的站点简介（搜索引擎与分享卡片会用到） -->
+  <meta name="description" content="郑乐晨的个人主页：人工智能本科在读，关注机器学习、大语言模型与具身智能，这里记录公开学习笔记和正在做的事。">
+  <meta name="author" content="郑乐晨">
+  <link rel="icon" href="assets/img/favicon-32.png" sizes="32x32" type="image/png">
+  <link rel="icon" href="assets/img/favicon-16.png" sizes="16x16" type="image/png">
+  <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
+  <link rel="stylesheet" href="assets/css/tokens.css">
+  <link rel="stylesheet" href="assets/css/base.css">
+  <link rel="stylesheet" href="assets/css/components.css">
+  <script>
+    /* 首屏前确定主题，避免深浅色闪烁；同时标记 JS 可用（滚动动画的降级开关） */
+    (function () {
+      document.documentElement.classList.add('js');
+      try {
+        var saved = localStorage.getItem('theme');
+        var theme = saved || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+        document.documentElement.setAttribute('data-theme', theme);
+      } catch (error) {
+        /* 读取失败时保持 CSS 的默认（跟随系统）行为 */
+      }
+    })();
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#main">跳到主要内容</a>
+
+  <!-- ============================ 顶部导航 ============================ -->
+  <header class="site-header" data-site-header>
+    <div class="container site-header__inner">
+      <a class="site-logo" href="index.html">
+        <span class="site-logo__mark">郑乐晨</span>
+        <span class="site-logo__sep" aria-hidden="true">·</span>
+        <span class="site-logo__name">Judy’s Notes</span>
+      </a>
+
+      <nav class="site-nav" id="site-nav" aria-label="主导航" data-site-nav>
+        <ul class="site-nav__list">
+          <li><a class="site-nav__link" href="index.html#about">关于</a></li>
+          <li><a class="site-nav__link" href="index.html#projects">正在做什么</a></li>
+          <li><a class="site-nav__link" href="blog/index.html">写作</a></li>
+          <li><a class="site-nav__link" href="tutorials/index.html">教程</a></li>
+          <li><a class="site-nav__link" href="links/index.html">友链</a></li>
+        </ul>
+      </nav>
+
+      <div class="site-header__actions">
+        <button class="theme-toggle" type="button" data-theme-toggle aria-pressed="false" aria-label="切换到深色主题" title="切换到深色主题">
+          <svg class="theme-toggle__icon theme-toggle__icon--moon" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+            <path d="M16.5 12.6A7.2 7.2 0 0 1 7.4 3.5a7.2 7.2 0 1 0 9.1 9.1Z" />
+          </svg>
+          <svg class="theme-toggle__icon theme-toggle__icon--sun" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true" focusable="false">
+            <circle cx="10" cy="10" r="3.6" />
+            <path d="M10 1.6v2.1M10 16.3v2.1M1.6 10h2.1M16.3 10h2.1M4.1 4.1l1.5 1.5M14.4 14.4l1.5 1.5M15.9 4.1l-1.5 1.5M5.6 14.4l-1.5 1.5" />
+          </svg>
+        </button>
+
+        <!-- 语言标记：纯占位，暂不实现切换逻辑 -->
+        <span class="lang-switch" aria-label="语言切换（占位，暂未启用）">
+          <span class="lang-switch__item lang-switch__item--active" lang="zh-CN">中</span>
+          <span aria-hidden="true">/</span>
+          <span class="lang-switch__item" lang="en">EN</span>
+        </span>
+
+        <button class="nav-toggle" type="button" data-nav-toggle aria-expanded="false" aria-controls="site-nav" aria-label="打开导航菜单">
+          <span class="nav-toggle__bar" aria-hidden="true"></span>
+          <span class="nav-toggle__bar" aria-hidden="true"></span>
+          <span class="nav-toggle__bar" aria-hidden="true"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- ============================ Hero（左：头像 / 右：文字） ============================ -->
+    <section class="hero" aria-labelledby="hero-title hero-name-zh">
+      <div class="container hero__inner">
+        <div class="hero__avatar">
+          <img src="assets/img/avatar.jpg" alt="郑乐晨的头像" width="1280" height="1101">
+        </div>
+
+        <div class="hero__text">
+          <p class="hero__eyebrow">Machine Learning · Large Language Models · Embodied AI</p>
+          <p class="hero__name-en" id="hero-title">Judy</p>
+          <h1 class="hero__name-zh" id="hero-name-zh">郑乐晨</h1>
+          <p class="hero__tagline">人工智能本科生 · <a href="https://www.ruc.edu.cn/" target="_blank" rel="noopener">中国人民大学 高瓴人工智能学院</a></p>
+          <p class="hero__lead">
+            人工智能专业本科在读（2026 级）。这里放我的公开笔记和一点零散的想法，欢迎指出错误。
+          </p>
+
+          <ul class="hero__socials">
+            <li>
+              <a class="icon-link" href="https://github.com/zhenglechen123456" aria-label="GitHub 主页" rel="me noopener" target="_blank">
+                <svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true" focusable="false">
+                  <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z" />
+                </svg>
+              </a>
+            </li>
+            <li>
+              <a class="icon-link" href="mailto:3539820258@qq.com" aria-label="发送邮件给郑乐晨">
+                <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round" aria-hidden="true" focusable="false">
+                  <rect x="2.3" y="4.6" width="15.4" height="10.8" rx="1.6" />
+                  <path d="m2.8 6 7.2 5 7.2-5" />
+                </svg>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================ 01 关于我 ============================ -->
+    <section class="section" id="about" aria-labelledby="about-title">
+      <div class="container">
+        <header class="section__header reveal">
+          <span class="section__numeral" aria-hidden="true">01</span>
+          <div>
+            <h2 class="section__title" id="about-title">关于我</h2>
+            <p class="section__subtitle">About</p>
+          </div>
+        </header>
+
+        <div class="prose reveal">
+          <!-- TODO: 替换为你的自我介绍第 1 段（现在做什么、在哪读书） -->
+          <p>
+            我是郑乐晨，中国人民大学 高瓴人工智能学院人工智能专业的本科生，2026 级。
+            刚进入大学，目前主要在补数学基础，也在慢慢熟悉一些工具。
+          </p>
+          <!-- TODO: 替换为第 2 段（你的关注点与方法） -->
+          <p>
+            兴趣方向见下面的「02 研究兴趣」，都还停留在了解阶段，暂时谈不上有什么成果。
+            我会把看过的材料和想到的问题记下来，一部分放在这个站上。
+          </p>
+          <!-- TODO: 替换为第 3 段（你在找什么机会 / 如何联系你） -->
+          <p>
+            目前还没有项目经历，也没有科研经历，希望之后能进实验室。
+            如果你想交流学习方向，或者发现本站有什么问题，欢迎写信给我。
+          </p>
+        </div>
+
+        <div class="tags tags--block reveal">
+          <span class="tag">机器学习</span>
+          <span class="tag">深度学习</span>
+          <span class="tag">大语言模型</span>
+          <span class="tag">具身智能</span>
+          <span class="tag">AI for Science</span>
+        </div>
+
+        <p class="section__footer reveal">
+          <a class="more-link" href="about/index.html">更长的自我介绍</a>
+        </p>
+      </div>
+    </section>
+
+    <!-- ============================ 02 研究兴趣 ============================ -->
+    <section class="section" id="interests" aria-labelledby="interests-title">
+      <div class="container">
+        <header class="section__header reveal">
+          <span class="section__numeral" aria-hidden="true">02</span>
+          <div>
+            <h2 class="section__title" id="interests-title">研究兴趣</h2>
+            <p class="section__subtitle">Interests</p>
+          </div>
+        </header>
+
+        <div class="grid grid--4">
+          <article class="card interest reveal">
+            <p class="interest__num">01</p>
+            <h3 class="card__title">机器学习基础</h3>
+            <p class="card__text">
+              优化、泛化与表示学习的基本问题。
+            </p>
+            <div class="tags">
+              <span class="tag">优化</span>
+              <span class="tag">概率</span>
+            </div>
+          </article>
+
+          <article class="card interest reveal">
+            <p class="interest__num">02</p>
+            <h3 class="card__title">大语言模型</h3>
+            <p class="card__text">
+              大语言模型的预训练、微调与评测等基本问题。
+            </p>
+            <div class="tags">
+              <span class="tag">预训练</span>
+              <span class="tag">评测</span>
+            </div>
+          </article>
+
+          <article class="card interest reveal">
+            <p class="interest__num">03</p>
+            <h3 class="card__title">具身智能</h3>
+            <p class="card__text">
+              模仿学习与视觉—语言—动作模型等基本问题。
+            </p>
+            <div class="tags">
+              <span class="tag">VLA</span>
+              <span class="tag">机器人</span>
+            </div>
+          </article>
+
+          <article class="card interest reveal">
+            <p class="interest__num">04</p>
+            <h3 class="card__title">AI for Science</h3>
+            <p class="card__text">
+              用机器学习方法处理科学与工程计算问题。
+            </p>
+            <div class="tags">
+              <span class="tag">GNN</span>
+              <span class="tag">科学计算</span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================ 03 近期动态 ============================ -->
+    <section class="section" id="now" aria-labelledby="now-title">
+      <div class="container">
+        <header class="section__header reveal">
+          <span class="section__numeral" aria-hidden="true">03</span>
+          <div>
+            <h2 class="section__title" id="now-title">近期动态</h2>
+            <p class="section__subtitle">Now</p>
+          </div>
+        </header>
+
+        <ol class="timeline reveal">
+          <li class="timeline__item">
+            <p class="timeline__date"><time datetime="2026-09">2026-09</time></p>
+            <h3 class="timeline__title">在摸索使用 DeepSeek Harness</h3>
+            <p class="timeline__text">
+              刚开始用，还没有固定的用法。
+            </p>
+          </li>
+          <li class="timeline__item">
+            <p class="timeline__date"><time datetime="2026-09">2026-09</time></p>
+            <h3 class="timeline__title">阅读阿加莎·克里斯蒂的侦探小说</h3>
+            <p class="timeline__text">
+              读得不快，慢慢看。
+            </p>
+          </li>
+          <li class="timeline__item">
+            <p class="timeline__date"><time datetime="2026-09">2026-09</time></p>
+            <h3 class="timeline__title">尝试搭建自己的纸质记录框架</h3>
+            <p class="timeline__text">
+              先用手写的方式试试，之后再调整。
+            </p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ============================ 04 正在做什么 ============================ -->
+    <section class="section" id="projects" aria-labelledby="projects-title">
+      <div class="container">
+        <header class="section__header reveal">
+          <span class="section__numeral" aria-hidden="true">04</span>
+          <div>
+            <h2 class="section__title" id="projects-title">正在做什么</h2>
+            <p class="section__subtitle">In Progress</p>
+          </div>
+        </header>
+
+        <div class="prose reveal">
+          <p>目前还没有项目经历，这里先记录我正在学和在做的事。</p>
+        </div>
+
+        <div class="grid grid--3 mt-6">
+          <article class="card reveal">
+            <p class="card__meta">学习路径</p>
+            <h3 class="card__title">把数学基础补上来</h3>
+            <p class="card__text">
+              目前以线性代数为主，跟着 3Blue1Brown 的系列视频看，进度不算快。
+            </p>
+          </article>
+
+          <article class="card reveal">
+            <p class="card__meta">在用的工具</p>
+            <h3 class="card__title">摸索 DeepSeek Harness</h3>
+            <p class="card__text">
+              刚开始用，还在找适合自己的用法。
+            </p>
+          </article>
+
+          <article class="card reveal">
+            <p class="card__meta">接下来</p>
+            <h3 class="card__title">希望之后能进实验室</h3>
+            <p class="card__text">
+              刚进入大学，还没有科研经历。先把基础打好，再看有没有机会参与一些实际的工作。
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================ 05 资料与教学 ============================ -->
+    <section class="section" id="resources" aria-labelledby="resources-title">
+      <div class="container">
+        <header class="section__header reveal">
+          <span class="section__numeral" aria-hidden="true">05</span>
+          <div>
+            <h2 class="section__title" id="resources-title">资料与教学</h2>
+            <p class="section__subtitle">Resources</p>
+          </div>
+        </header>
+
+        <div class="grid grid--3">
+          <article class="card resource reveal">
+            <h3 class="card__title">
+              <a class="card__title-link" href="https://space.bilibili.com/88461692" target="_blank" rel="noopener">线性代数的本质（3Blue1Brown）</a>
+            </h3>
+            <p class="card__meta">视频系列 · B 站官方账号</p>
+            <p class="card__text">
+              用可视化动画讲解线性代数的系列视频，官方账号提供双语字幕。
+            </p>
+          </article>
+
+          <!-- TODO: 替换资源卡片内容 -->
+          <article class="card resource reveal">
+            <h3 class="card__title">
+              <a class="card__title-link" href="tutorials/index.html#ml-roadmap">机器学习入门路线</a>
+            </h3>
+            <p class="card__meta">学习路线 · 持续更新</p>
+            <p class="card__text">
+              一条从数学基础到动手训练的路线图，标注了每个阶段的教材、习题与大概所需时间。
+            </p>
+          </article>
+
+          <article class="card resource reveal">
+            <h3 class="card__title">
+              <a class="card__title-link" href="tutorials/index.html#paper-reading">如何读一篇机器学习论文</a>
+            </h3>
+            <p class="card__meta">待整理</p>
+            <p class="card__text">
+              这块内容还在整理，之后补上。
+            </p>
+          </article>
+        </div>
+
+        <p class="section__footer reveal">
+          <a class="more-link" href="tutorials/index.html">全部教程与资料</a>
+        </p>
+      </div>
+    </section>
+
+    <!-- ============================ 06 写作 ============================ -->
+    <section class="section" id="writing" aria-labelledby="writing-title">
+      <div class="container">
+        <header class="section__header reveal">
+          <span class="section__numeral" aria-hidden="true">06</span>
+          <div>
+            <h2 class="section__title" id="writing-title">写作</h2>
+            <p class="section__subtitle">Writing</p>
+          </div>
+        </header>
+
+        <div class="grid grid--3">
+          <!-- TODO: 替换文章卡片（标题 / 日期 / 阅读时长 / 摘要） -->
+          <article class="card reveal">
+            <h3 class="card__title">
+              <a class="card__title-link" href="blog/posts/paper-reading-notes.html">示例文章：论文阅读笔记（占位）</a>
+            </h3>
+            <p class="card__meta"><time datetime="2025-02-10">2025-02-10</time> · 占位文章</p>
+            <p class="card__text">
+              用来演示文章格式的占位文章，内容之后会替换成真实的笔记。
+            </p>
+          </article>
+        </div>
+
+        <p class="section__footer reveal">
+          <a class="more-link" href="blog/index.html">全部文章</a>
+        </p>
+      </div>
+    </section>
+
+    <!-- ============================ 07 友链 ============================ -->
+    <section class="section" id="links" aria-labelledby="links-title">
+      <div class="container">
+        <header class="section__header reveal">
+          <span class="section__numeral" aria-hidden="true">07</span>
+          <div>
+            <h2 class="section__title" id="links-title">友链</h2>
+            <p class="section__subtitle">Links</p>
+          </div>
+        </header>
+
+        <div class="grid grid--3">
+          <a class="card friend reveal" href="http://yeyaozhi.eu.cc/" target="_blank" rel="noopener">
+            <h3 class="friend__name">叶耀之</h3>
+            <p class="friend__domain">yeyaozhi.eu.cc</p>
+            <p class="friend__desc">中国人民大学人工智能本科生，记录 AI4Math 与 AI4TCS 方向的学习、项目与公开笔记。</p>
+          </a>
+
+          <!--
+            新增友链：复制下面这个块，改四处（href / 名称 / 域名 / 简介）即可。
+            外链务必保留 target="_blank" rel="noopener"。
+
+            <a class="card friend reveal" href="https://对方网址" target="_blank" rel="noopener">
+              <h3 class="friend__name">对方名称</h3>
+              <p class="friend__domain">显示的域名</p>
+              <p class="friend__desc">一句话介绍</p>
+            </a>
+
+            完整列表与申请方式见 links/index.html
+          -->
+        </div>
+
+        <p class="section__footer reveal">
+          <a class="more-link" href="links/index.html">友链页与申请方式</a>
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============================ 页脚 ============================ -->
+  <footer class="site-footer">
+    <div class="container site-footer__inner">
+      <div>
+        <p class="site-footer__brand">郑乐晨 · Judy’s Notes</p>
+        <p class="site-footer__copy">© <span data-year>2026</span> 郑乐晨 · 内容采用 CC BY-NC-SA 4.0 许可</p>
+      </div>
+
+      <nav class="site-footer__nav" aria-label="页脚导航">
+        <a href="index.html">首页</a>
+        <a href="about/index.html">关于</a>
+        <a href="index.html#projects">正在做什么</a>
+        <a href="blog/index.html">写作</a>
+        <a href="tutorials/index.html">教程</a>
+        <a href="links/index.html">友链</a>
+      </nav>
+
+      <ul class="site-footer__socials">
+        <li>
+          <a class="icon-link" href="https://github.com/zhenglechen123456" aria-label="GitHub 主页" rel="me noopener" target="_blank">
+            <svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true" focusable="false">
+              <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z" />
+            </svg>
+          </a>
+        </li>
+        <li>
+          <a class="icon-link" href="mailto:3539820258@qq.com" aria-label="发送邮件给郑乐晨">
+            <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round" aria-hidden="true" focusable="false">
+              <rect x="2.3" y="4.6" width="15.4" height="10.8" rx="1.6" />
+              <path d="m2.8 6 7.2 5 7.2-5" />
+            </svg>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </footer>
+
+  <button class="to-top" type="button" data-to-top aria-label="回到页面顶部">
+    <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+      <path d="M10 16.5V4.5M4.8 9.7 10 4.5l5.2 5.2" />
+    </svg>
+  </button>
+
+  <script src="assets/js/theme.js" defer></script>
+  <script src="assets/js/nav.js" defer></script>
+  <script src="assets/js/main.js" defer></script>
+</body>
+</html>

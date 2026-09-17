@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>关于 · 郑乐晨 · Judy’s Notes</title>
+  <meta name="description" content="关于郑乐晨：人工智能本科在读，关注机器学习、大语言模型与具身智能，这里是一份长一点的自我介绍。">
+  <link rel="icon" href="../assets/img/favicon-32.png" sizes="32x32" type="image/png">
+  <link rel="icon" href="../assets/img/favicon-16.png" sizes="16x16" type="image/png">
+  <link rel="apple-touch-icon" href="../assets/img/apple-touch-icon.png">
+  <link rel="stylesheet" href="../assets/css/tokens.css">
+  <link rel="stylesheet" href="../assets/css/base.css">
+  <link rel="stylesheet" href="../assets/css/components.css">
+  <script>
+    (function () {
+      document.documentElement.classList.add('js');
+      try {
+        var saved = localStorage.getItem('theme');
+        var theme = saved || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+        document.documentElement.setAttribute('data-theme', theme);
+      } catch (error) {}
+    })();
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#main">跳到主要内容</a>
+
+  <header class="site-header" data-site-header>
+    <div class="container site-header__inner">
+      <a class="site-logo" href="../index.html">
+        <span class="site-logo__mark">郑乐晨</span>
+        <span class="site-logo__sep" aria-hidden="true">·</span>
+        <span class="site-logo__name">Judy’s Notes</span>
+      </a>
+
+      <nav class="site-nav" id="site-nav" aria-label="主导航" data-site-nav>
+        <ul class="site-nav__list">
+          <li><a class="site-nav__link" href="index.html">关于</a></li>
+          <li><a class="site-nav__link" href="../index.html#projects">正在做什么</a></li>
+          <li><a class="site-nav__link" href="../blog/index.html">写作</a></li>
+          <li><a class="site-nav__link" href="../tutorials/index.html">教程</a></li>
+          <li><a class="site-nav__link" href="../links/index.html">友链</a></li>
+        </ul>
+      </nav>
+
+      <div class="site-header__actions">
+        <button class="theme-toggle" type="button" data-theme-toggle aria-pressed="false" aria-label="切换到深色主题" title="切换到深色主题">
+          <svg class="theme-toggle__icon theme-toggle__icon--moon" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+            <path d="M16.5 12.6A7.2 7.2 0 0 1 7.4 3.5a7.2 7.2 0 1 0 9.1 9.1Z" />
+          </svg>
+          <svg class="theme-toggle__icon theme-toggle__icon--sun" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true" focusable="false">
+            <circle cx="10" cy="10" r="3.6" />
+            <path d="M10 1.6v2.1M10 16.3v2.1M1.6 10h2.1M16.3 10h2.1M4.1 4.1l1.5 1.5M14.4 14.4l1.5 1.5M15.9 4.1l-1.5 1.5M5.6 14.4l-1.5 1.5" />
+          </svg>
+        </button>
+
+        <span class="lang-switch" aria-label="语言切换（占位，暂未启用）">
+          <span class="lang-switch__item lang-switch__item--active" lang="zh-CN">中</span>
+          <span aria-hidden="true">/</span>
+          <span class="lang-switch__item" lang="en">EN</span>
+        </span>
+
+        <button class="nav-toggle" type="button" data-nav-toggle aria-expanded="false" aria-controls="site-nav" aria-label="打开导航菜单">
+          <span class="nav-toggle__bar" aria-hidden="true"></span>
+          <span class="nav-toggle__bar" aria-hidden="true"></span>
+          <span class="nav-toggle__bar" aria-hidden="true"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <div class="page-header">
+      <div class="container container--page">
+        <nav class="breadcrumb" aria-label="面包屑">
+          <a href="../index.html">首页</a>
+          <span aria-hidden="true">/</span>
+          <span aria-current="page">关于</span>
+        </nav>
+        <h1 class="page-header__title">关于我</h1>
+        <p class="page-header__lead">
+          首页那份太短了，这里写长一点：我在学什么、怎么学，以及一些暂时还没想清楚的问题。
+        </p>
+      </div>
+    </div>
+
+    <section class="section section--flush" id="who" aria-labelledby="who-title">
+      <div class="container container--page">
+        <header class="section__header reveal">
+          <span class="section__numeral" aria-hidden="true">01</span>
+          <div>
+            <h2 class="section__title" id="who-title">我是谁</h2>
+            <p class="section__subtitle">Who</p>
+          </div>
+        </header>
+
+        <div class="prose reveal">
+          <!-- TODO: 替换为你的真实自我介绍（这部分是文章主体，可以写得长一些） -->
+          <p>
+            我是郑乐晨，中国人民大学 高瓴人工智能学院人工智能专业本科在读，2026 级。
+            刚进入大学，目前主要在补数学基础，也在慢慢熟悉一些工具。
+          </p>
+          <p>
+            方向上的兴趣写在首页的「02 研究兴趣」里，都还在了解阶段，暂时谈不上有什么成果。
+          </p>
+          <p>
+            我还在找适合自己的记录方式，最近在试纸质的做法。这个网站也用来放一些笔记。
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="timeline" aria-labelledby="timeline-title">
+      <div class="container container--page">
+        <header class="section__header reveal">
+          <span class="section__numeral" aria-hidden="true">02</span>
+          <div>
+            <h2 class="section__title" id="timeline-title">学习经历</h2>
+            <p class="section__subtitle">Timeline</p>
+          </div>
+        </header>
+
+        <ol class="timeline reveal">
+          <!-- TODO: 替换为你的真实经历；不重要的可以删掉，保持 3-6 条 -->
+          <li class="timeline__item">
+            <p class="timeline__date"><time datetime="2026-09">2026-09</time></p>
+            <h3 class="timeline__title">进入中国人民大学 高瓴人工智能学院</h3>
+            <p class="timeline__text">
+              开始大学阶段的学习。
+            </p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="section" id="toolbox" aria-labelledby="toolbox-title">
+      <div class="container container--page">
+        <header class="section__header reveal">
+          <span class="section__numeral" aria-hidden="true">03</span>
+          <div>
+            <h2 class="section__title" id="toolbox-title">我在用什么</h2>
+            <p class="section__subtitle">Toolbox</p>
+          </div>
+        </header>
+
+        <div class="grid grid--2">
+          <!-- TODO: 替换为你的真实技术栈 -->
+          <article class="card reveal">
+            <h3 class="card__title">在用的工具</h3>
+            <p class="card__text">还没有整理成清单，等用顺手了再写。</p>
+          </article>
+
+          <article class="card reveal">
+            <h3 class="card__title">学习方法</h3>
+            <p class="card__text">还在找适合自己的方式，最近在试纸质的记录做法。</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="reading" aria-labelledby="reading-title">
+      <div class="container container--page">
+        <header class="section__header reveal">
+          <span class="section__numeral" aria-hidden="true">04</span>
+          <div>
+            <h2 class="section__title" id="reading-title">最近在读</h2>
+            <p class="section__subtitle">Reading</p>
+          </div>
+        </header>
+
+        <div class="prose reveal">
+          <!-- TODO: 替换为你正在读的书 / 论文 / 课程 -->
+          <ul>
+            <li><strong>阿加莎·克里斯蒂的侦探小说</strong>——读得不快，慢慢看。</li>
+          </ul>
+          <p>
+            学术方面的书和论文还没整理，之后补上。如果写了相关的文章，会放在
+            <a href="../blog/index.html">写作列表</a>里。
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="contact" aria-labelledby="contact-title">
+      <div class="container container--page">
+        <header class="section__header reveal">
+          <span class="section__numeral" aria-hidden="true">05</span>
+          <div>
+            <h2 class="section__title" id="contact-title">联系我</h2>
+            <p class="section__subtitle">Contact</p>
+          </div>
+        </header>
+
+        <div class="grid grid--2">
+          <div class="prose reveal">
+            <p>
+              最可靠的方式是邮件：<a href="mailto:3539820258@qq.com">3539820258@qq.com</a>。
+              以下的事情欢迎来打扰：
+            </p>
+            <ul>
+              <li>指出本站内容或代码中的错误（最欢迎这一类）；</li>
+              <li>询问某个笔记里没写清楚的地方；</li>
+              <li>交流学习路线、论文或实习机会；</li>
+              <li>交换友链，方式见<a href="../links/index.html">友链页</a>。</li>
+            </ul>
+            <p class="text-muted">
+              注意：我不会提供任何课程作业的答案，也请不要把这里的内容直接提交为作业。
+            </p>
+          </div>
+
+          <div class="card reveal">
+            <div class="hero__avatar hero__avatar--card">
+              <img src="../assets/img/avatar.jpg" alt="郑乐晨的头像" width="1280" height="1101">
+            </div>
+            <h3 class="card__title">郑乐晨 / Judy</h3>
+            <p class="card__meta">人工智能本科生 · 中国人民大学 高瓴人工智能学院</p>
+            <div class="card__links">
+              <a href="mailto:3539820258@qq.com">邮箱</a>
+              <a href="https://github.com/zhenglechen123456" rel="me noopener" target="_blank">GitHub</a>
+              <a href="../blog/index.html">写作</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container site-footer__inner">
+      <div>
+        <p class="site-footer__brand">郑乐晨 · Judy’s Notes</p>
+        <p class="site-footer__copy">© <span data-year>2026</span> 郑乐晨 · 内容采用 CC BY-NC-SA 4.0 许可</p>
+      </div>
+
+      <nav class="site-footer__nav" aria-label="页脚导航">
+        <a href="../index.html">首页</a>
+        <a href="index.html">关于</a>
+        <a href="../index.html#projects">正在做什么</a>
+        <a href="../blog/index.html">写作</a>
+        <a href="../tutorials/index.html">教程</a>
+        <a href="../links/index.html">友链</a>
+      </nav>
+
+      <ul class="site-footer__socials">
+        <li>
+          <a class="icon-link" href="https://github.com/zhenglechen123456" aria-label="GitHub 主页" rel="me noopener" target="_blank">
+            <svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true" focusable="false">
+              <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z" />
+            </svg>
+          </a>
+        </li>
+        <li>
+          <a class="icon-link" href="mailto:3539820258@qq.com" aria-label="发送邮件给郑乐晨">
+            <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round" aria-hidden="true" focusable="false">
+              <rect x="2.3" y="4.6" width="15.4" height="10.8" rx="1.6" />
+              <path d="m2.8 6 7.2 5 7.2-5" />
+            </svg>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </footer>
+
+  <button class="to-top" type="button" data-to-top aria-label="回到页面顶部">
+    <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+      <path d="M10 16.5V4.5M4.8 9.7 10 4.5l5.2 5.2" />
+    </svg>
+  </button>
+
+  <script src="../assets/js/theme.js" defer></script>
+  <script src="../assets/js/nav.js" defer></script>
+  <script src="../assets/js/main.js" defer></script>
+</body>
+</html>

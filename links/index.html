@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>友链 · 郑乐晨 · Judy’s Notes</title>
+  <meta name="description" content="郑乐晨的友链页：常读的博客与站点，以及申请友链的方式。">
+  <link rel="icon" href="../assets/img/favicon-32.png" sizes="32x32" type="image/png">
+  <link rel="icon" href="../assets/img/favicon-16.png" sizes="16x16" type="image/png">
+  <link rel="apple-touch-icon" href="../assets/img/apple-touch-icon.png">
+  <link rel="stylesheet" href="../assets/css/tokens.css">
+  <link rel="stylesheet" href="../assets/css/base.css">
+  <link rel="stylesheet" href="../assets/css/components.css">
+  <script>
+    (function () {
+      document.documentElement.classList.add('js');
+      try {
+        var saved = localStorage.getItem('theme');
+        var theme = saved || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+        document.documentElement.setAttribute('data-theme', theme);
+      } catch (error) {}
+    })();
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#main">跳到主要内容</a>
+
+  <header class="site-header" data-site-header>
+    <div class="container site-header__inner">
+      <a class="site-logo" href="../index.html">
+        <span class="site-logo__mark">郑乐晨</span>
+        <span class="site-logo__sep" aria-hidden="true">·</span>
+        <span class="site-logo__name">Judy’s Notes</span>
+      </a>
+
+      <nav class="site-nav" id="site-nav" aria-label="主导航" data-site-nav>
+        <ul class="site-nav__list">
+          <li><a class="site-nav__link" href="../index.html#about">关于</a></li>
+          <li><a class="site-nav__link" href="../index.html#projects">正在做什么</a></li>
+          <li><a class="site-nav__link" href="../blog/index.html">写作</a></li>
+          <li><a class="site-nav__link" href="../tutorials/index.html">教程</a></li>
+          <li><a class="site-nav__link" href="index.html">友链</a></li>
+        </ul>
+      </nav>
+
+      <div class="site-header__actions">
+        <button class="theme-toggle" type="button" data-theme-toggle aria-pressed="false" aria-label="切换到深色主题" title="切换到深色主题">
+          <svg class="theme-toggle__icon theme-toggle__icon--moon" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+            <path d="M16.5 12.6A7.2 7.2 0 0 1 7.4 3.5a7.2 7.2 0 1 0 9.1 9.1Z" />
+          </svg>
+          <svg class="theme-toggle__icon theme-toggle__icon--sun" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true" focusable="false">
+            <circle cx="10" cy="10" r="3.6" />
+            <path d="M10 1.6v2.1M10 16.3v2.1M1.6 10h2.1M16.3 10h2.1M4.1 4.1l1.5 1.5M14.4 14.4l1.5 1.5M15.9 4.1l-1.5 1.5M5.6 14.4l-1.5 1.5" />
+          </svg>
+        </button>
+
+        <span class="lang-switch" aria-label="语言切换（占位，暂未启用）">
+          <span class="lang-switch__item lang-switch__item--active" lang="zh-CN">中</span>
+          <span aria-hidden="true">/</span>
+          <span class="lang-switch__item" lang="en">EN</span>
+        </span>
+
+        <button class="nav-toggle" type="button" data-nav-toggle aria-expanded="false" aria-controls="site-nav" aria-label="打开导航菜单">
+          <span class="nav-toggle__bar" aria-hidden="true"></span>
+          <span class="nav-toggle__bar" aria-hidden="true"></span>
+          <span class="nav-toggle__bar" aria-hidden="true"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <div class="page-header">
+      <div class="container container--page">
+        <nav class="breadcrumb" aria-label="面包屑">
+          <a href="../index.html">首页</a>
+          <span aria-hidden="true">/</span>
+          <span aria-current="page">友链</span>
+        </nav>
+        <h1 class="page-header__title">友链</h1>
+        <p class="page-header__lead">
+          这里是我常读的站点。它们大多安静、更新不快，但每一篇都值得从头看到尾。
+        </p>
+      </div>
+    </div>
+
+    <section class="section section--flush" aria-labelledby="friends-title">
+      <div class="container container--page">
+        <h2 class="visually-hidden" id="friends-title">友链列表</h2>
+
+        <div class="grid grid--2">
+          <a class="card friend reveal" href="http://yeyaozhi.eu.cc/" target="_blank" rel="noopener">
+            <h3 class="friend__name">叶耀之</h3>
+            <p class="friend__domain">yeyaozhi.eu.cc</p>
+            <p class="friend__desc">中国人民大学人工智能本科生，记录 AI4Math 与 AI4TCS 方向的学习、项目与公开笔记。</p>
+          </a>
+
+          <!--
+            新增友链：复制下面这个块，改四处（href / 名称 / 域名 / 简介）即可。
+            外链务必保留 target="_blank" rel="noopener"。
+            首页 07 分区的友链网格是独立的一份，需要额外同步一条。
+
+            <a class="card friend reveal" href="https://对方网址" target="_blank" rel="noopener">
+              <h3 class="friend__name">对方名称</h3>
+              <p class="friend__domain">显示的域名</p>
+              <p class="friend__desc">一句话介绍</p>
+            </a>
+          -->
+        </div>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="apply-title">
+      <div class="container container--page">
+        <header class="section__header reveal">
+          <span class="section__numeral" aria-hidden="true">01</span>
+          <div>
+            <h2 class="section__title" id="apply-title">申请友链</h2>
+            <p class="section__subtitle">Apply</p>
+          </div>
+        </header>
+
+        <div class="grid grid--2">
+          <div class="prose reveal">
+            <p>
+              欢迎交换友链。只希望你的站点有自己的原创内容、能正常打开，并且已经加上了我的链接。
+              把下面四项发到我的邮箱就行。
+            </p>
+            <ul>
+              <li>站点名称</li>
+              <li>站点地址</li>
+              <li>一句话介绍（不超过 40 字）</li>
+              <li>你的头像或图标地址</li>
+            </ul>
+          </div>
+
+          <div class="card reveal">
+            <p class="card__meta">本站信息（供你添加友链时使用）</p>
+            <h3 class="card__title">郑乐晨 · Judy’s Notes</h3>
+            <p class="card__text">
+              人工智能本科生的个人主页与公开学习笔记：机器学习、大语言模型、具身智能。
+            </p>
+            <div class="tags">
+              <span class="tag">个人主页</span>
+              <span class="tag">学习笔记</span>
+            </div>
+            <div class="card__links">
+              <!-- TODO: 仓库还没创建，仓库名确认后核对一次下面的地址（site/ 文件夹就是仓库根目录，见 README 第二节） -->
+              <a href="https://zhenglechen123456.github.io/site/" target="_blank" rel="noopener">https://zhenglechen123456.github.io/site/</a>
+              <a href="mailto:3539820258@qq.com">3539820258@qq.com</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container site-footer__inner">
+      <div>
+        <p class="site-footer__brand">郑乐晨 · Judy’s Notes</p>
+        <p class="site-footer__copy">© <span data-year>2026</span> 郑乐晨 · 内容采用 CC BY-NC-SA 4.0 许可</p>
+      </div>
+
+      <nav class="site-footer__nav" aria-label="页脚导航">
+        <a href="../index.html">首页</a>
+        <a href="../about/index.html">关于</a>
+        <a href="../index.html#projects">正在做什么</a>
+        <a href="../blog/index.html">写作</a>
+        <a href="../tutorials/index.html">教程</a>
+        <a href="index.html">友链</a>
+      </nav>
+
+      <ul class="site-footer__socials">
+        <li>
+          <a class="icon-link" href="https://github.com/zhenglechen123456" aria-label="GitHub 主页" rel="me noopener" target="_blank">
+            <svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true" focusable="false">
+              <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z" />
+            </svg>
+          </a>
+        </li>
+        <li>
+          <a class="icon-link" href="mailto:3539820258@qq.com" aria-label="发送邮件给郑乐晨">
+            <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round" aria-hidden="true" focusable="false">
+              <rect x="2.3" y="4.6" width="15.4" height="10.8" rx="1.6" />
+              <path d="m2.8 6 7.2 5 7.2-5" />
+            </svg>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </footer>
+
+  <button class="to-top" type="button" data-to-top aria-label="回到页面顶部">
+    <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+      <path d="M10 16.5V4.5M4.8 9.7 10 4.5l5.2 5.2" />
+    </svg>
+  </button>
+
+  <script src="../assets/js/theme.js" defer></script>
+  <script src="../assets/js/nav.js" defer></script>
+  <script src="../assets/js/main.js" defer></script>
+</body>
+</html>

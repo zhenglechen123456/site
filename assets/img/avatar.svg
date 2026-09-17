@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240" width="240" height="240"
+     role="img" aria-labelledby="avatar-title">
+  <title id="avatar-title">极简几何占位头像</title>
+  <!--
+    纯手写 SVG 占位头像：一个外圈 + 头部圆形 + 肩部弧线 + 四个刻度。
+    想换成真实照片时，把 assets/img/avatar.svg 替换成 avatar.jpg，
+    再改 HTML 里的 <img src> 即可。颜色是中性灰，深浅色主题下都能看。
+  -->
+  <style>
+    .stroke {
+      fill: none;
+      stroke: #9aa0a8;
+      stroke-width: 2;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+    .accent {
+      fill: none;
+      stroke: #4f8ba8;
+      stroke-width: 2.5;
+      stroke-linecap: round;
+    }
+    @media (prefers-color-scheme: dark) {
+      .stroke { stroke: #7f858e; }
+      .accent { stroke: #7bb4ce; }
+    }
+  </style>
+
+  <!-- 外圈与刻度 -->
+  <circle class="stroke" cx="120" cy="120" r="111" opacity="0.35" />
+  <path class="stroke" d="M120 9v13M120 218v13M9 120h13M218 120h13" opacity="0.35" />
+
+  <!-- 头部与肩部 -->
+  <circle class="stroke" cx="120" cy="94" r="33" />
+  <path class="stroke" d="M54 196c11-36 36-55 66-55s55 19 66 55" />
+
+  <!-- 一点强调色，呼应站点的蓝青 -->
+  <path class="accent" d="M196.5 163.5A111 111 0 0 0 205 92" opacity="0.85" />
+</svg>
