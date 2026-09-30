@@ -452,7 +452,7 @@ body.nav-open {
   object-position: center;
 }
 
-/* 图标链接（GitHub / 邮箱 / RSS） */
+/* 图标链接（GitHub / 邮箱） */
 .icon-link {
   display: inline-flex;
   align-items: center;
