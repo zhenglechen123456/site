@@ -15,7 +15,7 @@
     "affiliation": "中国人民大学 高瓴人工智能学院",
     "location": "中国 · （城市待填）",
     "$commentLocation": "TODO: 站主未提供城市，先留空；想公开就填，不想公开可整行删掉（页面目前没有展示这个字段）。",
-    "email": "3539820258@qq.com",
+    "email": "zhenglechen123456@ruc.edu.cn",
     "bio": "中国人民大学 高瓴人工智能学院人工智能专业本科在读（2026 级）。目前主要在补数学基础，也在慢慢熟悉一些工具。",
     "avatar": "assets/img/avatar.jpg"
   },
@@ -29,8 +29,9 @@
     {
       "key": "email",
       "label": "邮箱",
-      "url": "mailto:3539820258@qq.com",
-      "handle": "3539820258@qq.com"
+      "url": "mailto:zhenglechen123456@ruc.edu.cn",
+      "$comment": "学校邮箱为主要联系方式。备用邮箱 3539820258@qq.com 只出现在 about 页的联系区。",
+      "handle": "zhenglechen123456@ruc.edu.cn"
     }
   ],
   "nav": [

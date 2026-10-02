@@ -86,7 +86,7 @@ https://zhenglechen123456.github.io/site/
 | --- | --- | --- |
 | 姓名、英文署名、一句话定位 | `index.html` | Hero 区块，搜 `Judy`、`hero__name-zh`、`hero__tagline` |
 | 头像 | `assets/img/avatar.jpg` | 真实头像（1280×1101）。换图时同步改各页 `<img src>` 与 `<link rel="icon">`，注意 `../` / `../../` 层级不同 |
-| 邮箱 / GitHub 链接 | 每个页面的 Hero 与页脚 | 搜 `3539820258@qq.com`、`github.com/zhenglechen123456` |
+| 邮箱 / GitHub 链接 | 每个页面的 Hero 与页脚 | 搜 `zhenglechen123456@ruc.edu.cn`、`github.com/zhenglechen123456`；备用邮箱 `3539820258@qq.com` 只在 `about/index.html` 的联系区 |
 | 颜色、字号、间距、圆角、深浅色 | `assets/css/tokens.css` | 全站唯一的变量文件；深色主题在 `[data-theme="dark"]` 里 |
 | 正文行宽、行高、reset | `assets/css/base.css` | `--measure`（约 68ch）、`--lh-base` |
 | 导航条、卡片、时间线、页脚样式 | `assets/css/components.css` | 按 `1. 顶栏` … `14. 响应式` 分节注释 |
@@ -173,7 +173,8 @@ site/
 - [ ] 文章是手写 HTML，数量多了需要一个构建脚本；`data/site.json` 是为那时准备的。
 - [ ] 首页导航里的「关于 / 正在做什么」用的是锚点，未做滚动位置高亮（scroll-spy）。
 - [x] 身份信息已填实：姓名「郑乐晨」、英文署名「Judy」、学校「中国人民大学 高瓴人工智能学院」、
-      邮箱 `3539820258@qq.com`、GitHub `github.com/zhenglechen123456`、友链已加入「叶耀之」。
+      主要邮箱 `zhenglechen123456@ruc.edu.cn`（备用 `3539820258@qq.com`，仅关于页）、
+      GitHub `github.com/zhenglechen123456`、友链已加入「叶耀之」与「Nevertheless」。
 - [x] 头像已换成真实照片 `assets/img/avatar.jpg`（1280×1101）。
       **需要站主目视确认**：页面容器是方形(112–144px)与圆形(96px)两种，横向图用 `object-fit: cover`
       居中裁切，左右各会裁掉约 13%。如果主体被切掉了，可以改 `components.css` 里
